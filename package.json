@@ -7,7 +7,7 @@
     "clean",
     "architecture"
   ],
-  "author": "Steven Martinez",
+  "author": "Santiago Aguirre",
   "license": "ISC",
   "type": "module",
   "main": "app.js",
