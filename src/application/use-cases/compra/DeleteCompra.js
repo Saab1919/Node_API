@@ -1,4 +1,4 @@
-import compraRepository from "../../infraestructura/repositories/CompraRepositoryMongo.js";
+import compraRepository from "../../../infraestructura/repositories/CompraRepositoryMongo.js";
 
 async function DeleteCompra(id) {
   const deleted = await compraRepository.deleteById(id);

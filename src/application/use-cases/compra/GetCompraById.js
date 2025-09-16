@@ -1,4 +1,4 @@
-import compraRepository from "../../infraestructura/repositories/CompraRepositoryMongo.js";
+import compraRepository from "../../../infraestructura/repositories/CompraRepositoryMongo.js";
 
 async function GetCompraById(id) {
   const compra = await compraRepository.findById(id);

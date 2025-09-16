@@ -1,4 +1,4 @@
-import compraRepository from "../../infraestructura/repositories/CompraRepositoryMongo.js";
+import compraRepository from "../../../infraestructura/repositories/CompraRepositoryMongo.js";
 
 async function CreateCompra(data) {
   if (!data.total && data.items) {

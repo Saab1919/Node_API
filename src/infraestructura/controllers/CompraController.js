@@ -1,12 +1,18 @@
-import CreateCompra from "../../application/use-cases/CreateCompra.js";
-import GetCompras from "../../application/use-cases/GetCompras.js";
-import GetCompraById from "../../application/use-cases/GetCompraById.js";
-import UpdateCompra from "../../application/use-cases/UpdateCompra.js";
-import DeleteCompra from "../../application/use-cases/DeleteCompra.js";
+import CreateCompra from "../../application/use-cases/compra/CreateCompra.js";
+import GetCompras from "../../application/use-cases/compra/GetCompras.js";
+import GetCompraById from "../../application/use-cases/compra/GetCompraById.js";
+import UpdateCompra from "../../application/use-cases/compra/UpdateCompra.js";
+import DeleteCompra from "../../application/use-cases/compra/DeleteCompra.js";
 
 class CompraController {
   async create(req, res) {
     try {
+      console.log('BODY COMPRA:', req.body);
+      const { items, total, domicilio, direccion } = req.body;
+      if (!items || !Array.isArray(items) || items.length === 0) {
+        return res.status(400).json({ error: 'El campo items es requerido y debe ser un array con al menos un elemento.' });
+      }
+      // Puedes agregar más validaciones según tu modelo
       const compra = await CreateCompra(req.body);
       res.status(201).json(compra);
     } catch (err) {

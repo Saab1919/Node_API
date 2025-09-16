@@ -1,4 +1,4 @@
-import compraRepository from "../../infraestructura/repositories/CompraRepositoryMongo.js";
+import compraRepository from "../../../infraestructura/repositories/CompraRepositoryMongo.js";
 
 async function UpdateCompra(id, data) {
   if (data.items) {
